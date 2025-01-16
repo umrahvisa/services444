@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0; /* Optional: Background color for better contrast */
+        }
+        img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain; /* Ensures the image scales proportionally */
+        }
+    </style>
+</head>
+<body>
+    <div id="content"></div>
+
+    <script>
+        // Get query parameters from the URL
+        const params = new URLSearchParams(window.location.search);
+        const showImage = params.get('showImage'); // Example query parameter: ?showImage=true
+
+        // Target the content div
+        const contentDiv = document.getElementById('content');
+
+        // Conditionally render the tag
+        if (showImage === '1') {
+            contentDiv.innerHTML = '<img src="visa1.png" alt="Visa">';
+        } 
+        else if(showImage === '2'){
+            contentDiv.innerHTML = '<img src="visa2.png" alt="Visa">';
+        }
+        else if(showImage === '3'){
+            contentDiv.innerHTML = '<img src="visa3.png" alt="Visa">';
+        }
+    </script>
+</body>
+</html>
